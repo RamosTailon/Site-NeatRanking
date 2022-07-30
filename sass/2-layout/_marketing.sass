@@ -1,0 +1,71 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+// @include base-mixins.mobile
+
+.marketing
+    background-color: variables.$dark-color
+    margin-top: -88px
+    padding-top: 88px
+    padding-bottom: 5em
+
+    &-container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        text-align: center
+        @include base-mixins.center-content
+
+    p
+        color: variables.$light-color
+        font-size: 3rem
+        @include base-mixins.mobile
+            font-size: 2rem
+            width: 85%
+            margin: 0 auto
+    span
+        font-size: 4rem
+        font-weight: bold
+        color: variables.$primary-color
+        display: inline-block
+        position: relative
+        margin: 2rem 0
+
+        img
+            width: 80px
+            clear: left
+            position: absolute
+            top: 1rem
+            margin-left: 2rem
+            @include base-mixins.mobile
+                display: none
+    &-texto
+        width: 850px
+        @include base-mixins.mobile
+            width: 97%
+            margin: 0 auto
+        &-frase
+            display: flex
+            align-items: center
+
+            .ponto
+                width: 15px
+                height: 15px
+                border-radius: 50%
+                background-color: variables.$primary-color
+                margin-right: .7rem
+                @include base-mixins.mobile
+                    display: none
+
+            p
+                font-size: 1rem
+                text-align: left
+                line-height: 2.5
+                @include base-mixins.mobile
+                    border: 1px solid gray
+                    border-radius: 10px
+                    padding: 10px 0
+                    margin-bottom: 8px
+                    font-size: 1.3em
+                    text-align: center
+                    line-height: 1.5
+                    color: variables.$light-color

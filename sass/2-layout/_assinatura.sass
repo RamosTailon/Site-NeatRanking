@@ -1,0 +1,51 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use '../3-modules/button'
+
+.assinaturas
+    background-color: variables.$section-bg-color
+    padding-top: 6rem
+    &-container
+        @include base-mixins.center-content
+        display: flex
+        flex-direction: column
+
+        h2
+            text-align: center
+            font-size: 1.9rem
+            font-weight: 300
+            margin-bottom: 3em
+            @include base-mixins.mobile
+                max-width: 400px
+                margin: 0 auto
+                margin-bottom: 1.2rem
+
+            span
+                font-weight: 800
+                font-size: 2em
+                @include base-mixins.mobile
+                    font-size: 3rem
+
+        &-input
+            display: flex
+            justify-content: center
+
+            form
+                display: flex
+                width: 80%
+                flex-direction: column
+                input
+                    padding: .7em 1em
+                    margin-bottom: 2em
+                    font-size: 1.1rem
+                    border: 1px solid #CCC
+                    border-radius: 7px
+                button
+                    @include button.button
+                    background-color: variables.$primary-color
+                    margin-bottom: 6em
+                    &:hover
+                        background-color: #eea26c
+                    @include base-mixins.mobile
+                        height: 60px
+                        font-size: 13pt

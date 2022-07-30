@@ -1,0 +1,42 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+
+.depoimentos
+    background-color: variables.$dark-color
+    padding-top: 6rem
+    &-container
+        display: flex
+        flex-direction: column
+        @include base-mixins.center-content
+        &-imagens
+            position: relative
+            height: 825px
+            @include base-mixins.mobile
+                height: auto
+                margin: 0 auto
+
+            #bruna,#luana,#pedro
+                @include base-mixins.mobile
+                    width: 380px
+                    position: relative !important
+                    left: 0 !important
+                    top: 0 !important
+                    display: flex
+                    margin-bottom: 1.5rem
+
+            #bruna
+                position: absolute
+                left: 15px
+
+            #luana
+                position: absolute
+                top: 240px
+                left: 420px
+            #pedro
+                position: absolute
+                top: 500px
+                left: 60px
+    h2
+        @include base-mixins.title
+        @include base-mixins.mobile
+            margin-bottom: 2.5rem

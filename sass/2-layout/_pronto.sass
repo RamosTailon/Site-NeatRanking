@@ -1,0 +1,52 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use '../3-modules/button'
+
+.fique-pronto
+    background-color: variables.$dark-color
+    padding-bottom: 5rem
+
+    h2
+        @include base-mixins.title
+        @include base-mixins.mobile
+            margin-bottom: 2.5rem
+
+    &-container
+        @include base-mixins.center-content
+        display: flex
+        justify-content: center
+        @include base-mixins.mobile
+            width: 100%
+            flex-direction: column
+        &-paragrafo
+            width: 255px
+            font-size: 1.5rem
+            color: variables.$light-color
+            margin-right: 10rem
+            @include base-mixins.mobile
+                margin: 0 auto
+                margin-bottom: 2rem
+            span
+                font-size: 1.8rem
+                color: variables.$primary-color
+                font-weight: bold
+        img
+            width: 650px
+            @include base-mixins.mobile
+                width: 360px
+                height: 210px
+                margin: 0 auto
+
+    .btn
+        display: flex
+        justify-content: center
+        margin-top: 5rem
+        button
+
+            @include button.button
+            background-color: variables.$primary-color
+            border: 2px solid variables.$primary-color
+
+            &:hover
+                border: 2px solid variables.$primary-color
+                background-color: rgba(0,0 ,0 ,0)

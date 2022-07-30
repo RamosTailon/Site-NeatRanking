@@ -1,0 +1,57 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+
+.fazemos
+    background-color: variables.$dark-color
+
+    h2
+        @include base-mixins.title
+        @include base-mixins.mobile
+            margin-bottom: 2.5rem
+    &-container
+        @include base-mixins.center-content
+
+        display: grid
+        grid-template-columns: 1fr 1.5fr
+        grid-template-rows: 1fr 1fr
+        grid-template-areas: "t1 i""t2 i"
+        @include base-mixins.mobile
+            display: flex
+            flex-direction: column
+            max-width: 360px
+            text-align: center
+
+        &-texto
+            font-size: 1.8rem
+            color: variables.$light-color
+            @include base-mixins.mobile
+                font-size: 1.5rem
+
+        #texto1
+            grid-area: t1
+        #texto2
+            grid-area: t2
+        &-imagens
+            margin-left: 6rem
+            border: 2px solid variables.$light-color
+            border-radius: 20px
+            grid-area: i
+            display: grid
+            grid-template-columns: 1fr 1.5fr
+            grid-template-rows: 1fr 1fr 1fr
+            grid-template-areas: "t1 i""t2 i"
+            padding: 2.5rem
+            @include base-mixins.mobile
+                margin-top: 2rem
+                margin-left: 0
+
+        img
+            width: 135px
+        #parag1,#parag2,#parag3
+            font-size: 1.8rem
+            color: variables.$light-color
+            font-weight: 500
+            margin-top: 3rem
+            @include base-mixins.mobile
+                font-size: 1.5rem
+                margin-top: 2rem

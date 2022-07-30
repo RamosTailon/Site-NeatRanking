@@ -1,0 +1,45 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+
+.header
+    @include base-mixins.center-content
+    &-logo
+        display: flex
+        align-items: center
+        cursor: pointer
+        @include base-mixins.mobile
+            margin-left: 2em
+            padding-top: 2em
+
+        img
+            width: 80px
+            height: 80px
+            @include base-mixins.mobile
+                width: 56px
+                height: 56px
+        span
+            color: variables.$primary-color
+            font-size: 1.7rem
+            font-weight: 700
+            margin-left: 1rem
+    &-social-media
+        display: flex
+        align-items: center
+        @include base-mixins.mobile
+            display: none
+        .rede-social
+
+            a
+                margin: .7rem .7rem
+                &:hover i
+                    color: variables.$primary-color
+                i
+                    font-size: 2.6rem
+                    transition: .4s
+    .fas.fa-bars
+        display: none
+        @include base-mixins.mobile
+            display: flex
+            margin-right: 3rem
+            padding-top: 1.5em
+            font-size: 2em
